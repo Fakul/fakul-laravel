@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/ola',function(){
     return 'ola mundo';
 });
+
+Route::resource('records', 'RecordController');
