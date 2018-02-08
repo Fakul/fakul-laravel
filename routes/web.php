@@ -12,11 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
-
-Route::get('/ola',function(){
-    return 'ola mundo';
-});
-
-Route::resource('records', 'RecordController');
