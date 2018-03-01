@@ -15,8 +15,8 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('variant');
-            $table->timestamp('date_of_taking');
+            $table->string('variant')->nullable();
+            $table->date('date_of_taking')->nullable();
             $table->timestamps();
         });
     }

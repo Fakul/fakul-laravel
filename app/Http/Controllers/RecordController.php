@@ -15,7 +15,7 @@ class RecordController extends Controller
     public function index()
     {
         $records = Record::all();
-        return $records;
+        return response()->json($records);
     }
 
     /**
@@ -36,7 +36,15 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $record = new  Record();
+        $record->variant = $request->variant;
+        $record->date_of_taking = $request->date_of_taking;
+        if($record->save()){
+            return $record;
+        }
+        else{
+            return response()->json(['message'=>'failed'],500);
+        }
     }
 
     /**
@@ -45,9 +53,12 @@ class RecordController extends Controller
      * @param  \fakul\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Record $record)
+    public function show(Record $record_id)
     {
         //
+        $record = Record::where('id',$record_id)->get();
+
+        return response()->json($record);
     }
 
     /**
@@ -70,7 +81,7 @@ class RecordController extends Controller
      */
     public function update(Request $request, Record $record)
     {
-        //
+        $record = Record::find($record)->update($request->all());
     }
 
     /**
