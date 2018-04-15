@@ -1,1 +1,1 @@
-<div id="copyright text-right">© Copyright 2017 Fakul</div>
+<div id="copyright text-right">© Copyright 2018 Fakul</div>

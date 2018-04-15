@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-import App from './views/App'
-import Hello from './views/Hello'
-import Home from './views/Home'
+import App from './views/App';
+import Hello from './views/Hello';
+import Home from './views/Home';
 
 const router = new VueRouter({
     mode: 'history',

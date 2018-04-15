@@ -1,8 +1,17 @@
 @extends('layouts.master')
 
+@section('stylesheet')
+    <link href="main.css" />
+@stop
+
 @section('content')
 
+<div id="app">
+    <app></app>
+</div>
 
-<h1> Hello team fakul </h1>
+@section('scripts')
+    <script src="{{ mix('js/app.js') }}"></script>
+@stop
 
 @stop
