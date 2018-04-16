@@ -9,15 +9,16 @@
         </div>
 
         <ul v-if="tests">
-            <li v-for="{ variant, date_of_taking } in tests">
-                <strong>Name:</strong> {{ variant }},
-                <strong>Email:</strong> {{ date_of_taking }}
+            <li v-for="test in tests">
+                <test v-bind:test="test"></test>
             </li>
         </ul>
     </div>
 </template>
 <script>
     import axios from 'axios';
+    import Test from '../components/Test';
+
     export default {
         data() {
             return {
@@ -29,20 +30,21 @@
         created() {
             this.fetchData();
         },
+        components:{
+            Test
+        },
         methods: {
             fetchData() {
-                this.error = this.users = null;
+                this.error = null;
                 this.loading = true;
-                axios
-                    .get('/api/records')
+                axios.get('/api/records')
                     .then(response => {
                         this.loading = false;
                         this.tests = response.data;
-                        console.log(this.tests);
                     })
                     .catch(error => {
                         this.loading = false;
-                        //this.error = error.response.data.message || error.message;
+                        this.error = error.response.data.message || error.message;
                     });
             }
         }
