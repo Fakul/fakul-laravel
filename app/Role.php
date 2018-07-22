@@ -1,10 +1,10 @@
 <?php
 
-namespace fakul;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Record extends Model
+class Role extends Model
 {
     //
 }

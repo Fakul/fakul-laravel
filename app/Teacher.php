@@ -1,10 +1,10 @@
 <?php
 
-namespace fakul;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ChairCourse extends Model
+class Teacher extends Model
 {
     //
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace fakul;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Field extends Model
+class Semester extends Model
 {
     //
 }

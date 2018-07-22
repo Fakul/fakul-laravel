@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
-class CreateRecordsTable extends Migration
+
+class CreateFacultiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +15,13 @@ class CreateRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
+        Schema::create('faculties', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('variant')->nullable();
-            $table->date('date_of_taking')->nullable();
-            $table->timestamps();
+            $table->string('nome', 50);
+//            $table->timestamps();
         });
+        DB::statement("ALTER TABLE faculties AUTO_INCREMENT = 6;");
+
     }
 
     /**
@@ -28,6 +31,6 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('faculties');
     }
 }
