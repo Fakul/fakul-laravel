@@ -24,7 +24,8 @@ class CreateTestsTable extends Migration
             $table->string('path', 255)->nullable();
             $table->string('professores', 500)->nullable();
             $table->string('escola', 500)->nullable();
-            $table->string('guiao', 500)->unsigned()->nullable();
+            // $table->string('guiao', 500)->unsigned()->nullable();
+            $table->string('guiao', 500)->nullable();
             $table->string('chair_id', 500)->unsigned()->nullable();
             $table->string('course_id', 500)->unsigned()->nullable();
 //            $table->timestamps();
