@@ -28,6 +28,10 @@ class CreateUsersTable extends Migration
             $table->dateTime('modified')->nullable();
             $table->rememberToken();
 //            $table->timestamps();
+
+             /*Declaracao das Chaves Estrangeiras*/
+             $table->foreign('carea_id')->references('id')->on('careas')->onDelete('cascade');
+             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
         DB::statement("ALTER TABLE users AUTO_INCREMENT = 387;");
 

@@ -14,5 +14,11 @@ class Course extends Model
         return $this->belongsTo('App\Carea');
     }
 
+    public function chairsCourses(){
+        return $this->hasMany('App\Chair_Course');
+    }
 
+    public function tests(){
+        return $this->hasMany('App\Test');
+    }
 }

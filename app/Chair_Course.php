@@ -23,4 +23,6 @@ class Chair_Course extends Model
     public function semesters(){
         return $this->belongsTo('App\Semester');
     }
+
+
 }

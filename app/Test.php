@@ -21,4 +21,8 @@ class Test extends Model
     public function courses(){
         return $this->belongsTo('App\Course');
     }
+
+    public function resolutions(){
+        return $this->hasMany('App\Resolution');
+    }
 }
