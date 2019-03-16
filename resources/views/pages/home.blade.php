@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('stylesheet')
-    <link href="main.css" />
+@section('stylesheets')
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
 @stop
-
 @section('content')
 
 <div id="app">

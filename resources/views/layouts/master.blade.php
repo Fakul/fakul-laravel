@@ -1,26 +1,16 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="h-100">
 <head>
     @include('partials.head')
     @yield('stylesheets')
 </head>
 
-<body>
-<div class="container">
-    <header class="row">
-
+<body class="d-flex flex-column h-100">
         @include('partials.header')
-
-    </header>
-    <div id="main">
-        @yield('content')
-    </div>
-    <footer>
-
+        <main role="main" class="flex-shrink-0">
+            @yield('content')
+        </main>
         @include('partials.footer')
-
-    </footer>
-</div>
 
 @yield('scripts')
 </body>
