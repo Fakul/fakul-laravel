@@ -1,5 +1,5 @@
 <template>
-    <div class="users">
+    <div class="users row">
         <div class="loading" v-if="loading">
             Loading...
         </div>
@@ -10,7 +10,9 @@
 
         <ul v-if="tests">
             <li v-for="test in tests">
-                <test v-bind:test="test"></test>
+                <div class="col-sm-6 col-md-3">
+                   <test v-bind:test="test"></test>
+                </div>
             </li>
         </ul>
     </div>
